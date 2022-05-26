@@ -24,4 +24,4 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
 # Move old zshrc and set symbolic link with the other one
 mkdir ~/.your-old-zshrcs && mv ~/.zshrc ~/.your-old-zshrcs/.zshrc-$(date +"%FT%H%M")
 ln -s $SCRIPT_DIR/.zshrc ~/.zshrc 
-
+zsh
