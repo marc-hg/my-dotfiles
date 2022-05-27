@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Exit inmediately if any command fails
 set -e
@@ -6,13 +6,9 @@ set -e
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
 ZSH_CUSTOM=~/.oh-my-zsh/custom
 
-# Install some dependencies
-apt update
-apt install git curl nano -y
-
-# Install zsh
-apt install zsh -y
-chsh -s $(which zsh)
+# Install zsh and some dependencies
+apk update
+apk add git curl nano vim zsh
 
 # Install oh my zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
