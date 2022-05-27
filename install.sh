@@ -3,7 +3,7 @@
 # Exit inmediately if any command fails
 set -e
 
-SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
+a="/$0"; a=${a%/*}; a=${a#/}; a=${a:-.}; SCRIPT_DIR=$(cd "$a"; pwd)
 ZSH_CUSTOM=~/.oh-my-zsh/custom
 
 # Install zsh and some dependencies
@@ -20,4 +20,4 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
 # Move old zshrc and set symbolic link with the other one
 mkdir ~/.your-old-zshrcs && mv ~/.zshrc ~/.your-old-zshrcs/.zshrc-$(date +"%FT%H%M")
 ln -s $SCRIPT_DIR/.zshrc ~/.zshrc 
-zsh
+
