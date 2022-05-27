@@ -8,7 +8,7 @@ ZSH_CUSTOM=~/.oh-my-zsh/custom
 
 # Install some dependencies
 apt update
-apt install git curl nano -y
+apt install git curl nano vim -y
 
 # Install zsh
 apt install zsh -y
