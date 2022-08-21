@@ -2,10 +2,10 @@
 index:
 	#                USAGE
 	# =======================================
-	# Install everything: make install_all
-	# Install zsh and oh-my-zsh: make install_zsh
-	# Install neovim: make install_nvim
-	# Install docker: make install_docker
+	# 1. make install_all            || Install everything
+	# 2. make install_zsh            || Install zsh and oh-my-zsh
+	# 3. make install_nvim           || Install neovim
+	# 4. make install_docker         || Install docker
 	# =======================================
 
 install_all:
