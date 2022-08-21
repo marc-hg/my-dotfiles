@@ -1,11 +1,12 @@
 # Welcome message
 index:
-	echo "Instalation scripts index"
-	echo "========================="
-	echo "Install everything: make install_all"
-	echo "Install zsh and oh-my-zsh: make install_zsh"
-	echo "Install neovim: make install_nvim"
-	echo "Install docker: make install_docker"
+	#                USAGE
+	# =======================================
+	# Install everything: make install_all
+	# Install zsh and oh-my-zsh: make install_zsh
+	# Install neovim: make install_nvim
+	# Install docker: make install_docker
+	# =======================================
 
 install_all:
 	make install_zsh
