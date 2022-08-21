@@ -6,10 +6,6 @@ set -e
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
 ZSH_CUSTOM=~/.oh-my-zsh/custom
 
-# Install some dependencies
-sudo apt update
-sudo apt install git curl nano vim -y
-
 # Install zsh
 sudo apt install zsh -y
 chsh -s $(which zsh)
@@ -24,4 +20,3 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
 # Move old zshrc and set symbolic link with the other one
 mkdir ~/.your-old-zshrcs && mv ~/.zshrc ~/.your-old-zshrcs/.zshrc-$(date +"%FT%H%M")
 ln -s $SCRIPT_DIR/.zshrc ~/.zshrc 
-zsh

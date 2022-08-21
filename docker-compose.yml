@@ -1,0 +1,9 @@
+services:
+  mydebian:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "1337:1337"
+    volumes:
+      - ./mydata:/mydata
