@@ -12,7 +12,7 @@ sudo apt install zsh -y
 chsh -s $(which zsh)
 
 # Install oh my zsh
-if [ -d "~/.oh-my-zsh" ]
+if [ -d ~/.oh-my-zsh ]
 then
   echo The $ZSH folder already exists, cloning into ~/.your-old-oh-my-zsh-${DATE}...
   mkdir ~/.your-old-oh-my-zsh-${DATE}
