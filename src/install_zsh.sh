@@ -12,7 +12,7 @@ sudo apt install zsh -y
 chsh -s $(which zsh)
 
 # Install oh my zsh
-if [ -d "~/.oh-my-zsh" ] then)
+if [ -d "~/.oh-my-zsh" ] then
   mkdir ~/.your-old-oh-my-zsh-${DATE}
   mv ~/.oh-my-zsh ~/.your-old-oh-my-zsh-${DATE}
 fi
