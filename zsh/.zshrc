@@ -1,5 +1,8 @@
 export ZDOTDIR=$HOME/.config/zsh
 
+# Update dotfiles
+git -C ~/my-dotfiles pull
+
 # Install ranger if not installed
 if ! command -v ranger >/dev/null 2>&1; then
     echo "Installing ranger"
