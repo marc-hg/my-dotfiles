@@ -1,5 +1,23 @@
 #!/bin/bash
 echo 'Welcome to my common programs installer!'
+echo 'Before installing anything we need wget, curl and git'
+
+sudo apt update
+
+# Install wget, curl and git if not installed
+if ! command -v wget >/dev/null 2>&1; then
+    echo "Installing wget"
+    sudo apt install wget -y
+fi
+if ! command -v curl >/dev/null 2>&1; then
+    echo "Installing curl"
+    sudo apt install curl -y
+fi
+if ! command -v git >/dev/null 2>&1; then
+    echo "Installing git"
+    sudo apt install git -y
+fi
+
 
 # Install ranger if not installed
 if ! command -v ranger >/dev/null 2>&1; then
@@ -41,7 +59,18 @@ if ! command -v docker >/dev/null 2>&1; then
     read -p "Do you want to install docker? [y/n] " -n 1 -r
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
-        sudo apt install docker.io -y
+        bash src/install_docker.sh
+    fi
+fi
+
+# install nvim if not installed
+if ! command -v nvim >/dev/null 2>&1; then
+    echo "nvim is not installed..."
+    # Do you want to install nvim?
+    read -p "Do you want to install nvim? [y/n] " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        bash src/install_nvim.sh
     fi
 fi
 
