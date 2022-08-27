@@ -88,6 +88,17 @@ if ! command -v docker >/dev/null 2>&1; then
     fi
 fi
 
+# Install ncdu if not installed
+if ! command -v ncdu >/dev/null 2>&1; then
+    echo "ncdu is not installed..."
+    # Do you want to install ncdu?
+    if want_act "Do you want to install ncdu?"; then
+        echo "Installing ncdu..."
+        sudo apt install ncdu -y
+        echo "Done"
+    fi
+fi
+
 # install lvim if not installed
 # if ! command -v nvim >/dev/null 2>&1; then
 #     echo "lvim is not installed..."
