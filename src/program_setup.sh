@@ -99,6 +99,39 @@ if ! command -v ncdu >/dev/null 2>&1; then
     fi
 fi
 
+# Install fzf if not installed
+if ! command -v fzf >/dev/null 2>&1; then
+    echo "fzf is not installed..."
+    # Do you want to install fzf?
+    if want_act "Do you want to install fzf?"; then
+        echo "Installing fzf..."
+        sudo apt install fzf -y
+        echo "Done"
+    fi
+fi
+
+# Install neovim if not installed
+if ! command -v nvim >/dev/null 2>&1; then
+    echo "neovim is not installed..."
+    # Do you want to install neovim?
+    if want_act "Do you want to install neovim?"; then
+        echo "Installing neovim..."
+        sudo apt install neovim -y
+        echo "Done"
+    fi
+fi
+
+# Install zoxide if not installed
+if ! command -v zoxide >/dev/null 2>&1; then
+    echo "zoxide is not installed..."
+    # Do you want to install zoxide?
+    if want_act "Do you want to install zoxide?"; then
+        echo "Installing zoxide..."
+        curl -sS https://webinstall.dev/zoxide | bash
+        echo "Done"
+    fi
+fi
+
 # install lvim if not installed
 # if ! command -v nvim >/dev/null 2>&1; then
 #     echo "lvim is not installed..."
@@ -120,20 +153,6 @@ if ! command -v zsh >/dev/null 2>&1; then
         echo "Installing zsh..."
         sudo apt install zsh -y
         chsh -s $(which zsh)
-        echo "Done"
-    fi
-fi
-
-# Install z if not installed
-if ! test -f ~/.local/share/z/bin/z.sh; then
-    echo "z is not installed..."
-    if want_act "Do you want to install z?"; then
-        echo "Installing z..."
-        # Create ~/.local/share/z/bin directory if it does not exit"
-        if [ ! -d ~/.local/share/z/bin ]; then
-            mkdir -p ~/.local/share/z/bin
-        fi
-        wget https://raw.githubusercontent.com/rupa/z/master/z.sh -O ~/.local/share/z/bin/z.sh
         echo "Done"
     fi
 fi
