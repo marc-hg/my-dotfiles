@@ -95,7 +95,7 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 # Use powerlevel10k if folder exists.
 if [ -d "$ZDOTDIR/powerlevel10k" ]; then
   source "$ZDOTDIR/powerlevel10k/powerlevel10k.zsh-theme"
-  source "$ZDOTDIR/powerlevel10k/powerlevel10k.zsh"
+  source ~/.config/zsh/.p10k.zsh
 else 
   zsh_add_file "zsh-prompt"
 fi
@@ -106,3 +106,6 @@ fi
 # fnm
 export PATH=/home/myuser/.fnm:$PATH
 eval "`fnm env`"
+
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+
