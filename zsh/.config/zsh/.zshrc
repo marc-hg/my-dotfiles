@@ -92,13 +92,12 @@ export BROWSER="brave"
 export QT_QPA_PLATFORMTHEME=qt5ct
 
 # p10k
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+# Use powerlevel10k if folder exists.
+if [ -d "$ZDOTDIR/powerlevel10k" ]; then
+  source "$ZDOTDIR/powerlevel10k/powerlevel10k.zsh-theme"
+  source "$ZDOTDIR/powerlevel10k/powerlevel10k.zsh"
+fi
 
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 # fnm
 
 # fnm
