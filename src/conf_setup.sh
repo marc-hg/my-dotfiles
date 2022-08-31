@@ -32,6 +32,12 @@ if want_act "Set up conf for zsh?"; then
         git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ~/.config/zsh/powerlevel10k
         echo "Done"
     fi
+
+    if want_act "Want to set zsh as default shell?"; then
+        echo "Setting zsh as default shell..."
+        chsh -s $(which zsh)
+        echo "Done"
+    fi
 fi
 
 if want_act "Set up conf for ranger?"; then
