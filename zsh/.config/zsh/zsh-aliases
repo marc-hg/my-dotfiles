@@ -8,6 +8,7 @@ alias nvimrc='nvim ~/.config/nvim/'
 alias lvim='nvim -u ~/.local/share/lunarvim/lvim/init.lua --cmd "set runtimepath+=~/.local/share/lunarvim/lvim"'
 
 alias mypurge='sudo apt-get purge --auto-remove'
+alias myprune='sudo apt-get purge --auto-remove'
 
 # Meta
 alias zsh-update="git -C ~/my-dotfiles pull && zsh"
