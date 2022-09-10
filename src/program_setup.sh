@@ -116,7 +116,9 @@ if ! command -v nvim >/dev/null 2>&1; then
     # Do you want to install neovim?
     if want_act "Do you want to install neovim?"; then
         echo "Installing neovim..."
-        sudo apt install neovim -y
+	curl -LO https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-linux64.deb && 
+	sudo apt install ./nvim-linux64.deb
+	rm -f ./nvim-linux64.deb
         echo "Done"
     fi
 fi
