@@ -9,8 +9,8 @@ fi
 #!/bin/sh
 export ZDOTDIR=$HOME/.config/zsh
 HISTFILE=~/.zsh_history
-setopt appendhistory
-
+#setopt appendhistory
+setopt inc_append_history
 # some useful options (man zshoptions)
 setopt autocd extendedglob nomatch menucomplete
 setopt interactive_comments
