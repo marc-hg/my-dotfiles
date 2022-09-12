@@ -51,6 +51,26 @@ if ! command -v ranger >/dev/null 2>&1; then
     fi
 fi
 
+# Install ripgrep if not installed
+if ! command -v ripgrep >/dev/null 2>&1; then
+    echo "ripgrep is not installed. This is needed for neovim telescope"
+    if want_act "Do you want to install ripgrep?"; then
+        echo "Installing ripgrep..."
+        sudo apt install ripgrep -y
+        echo "Done"
+    fi
+fi
+
+# Install lazygit if not installed
+if ! command -v lazygit >/dev/null 2>&1; then
+    echo "lazygit is not installed. This is needed for neovim telescope"
+    if want_act "Do you want to install lazygit?"; then
+        echo "Installing lazygit..."
+        sudo apt install lazygit -y
+        echo "Done"
+    fi
+fi
+
 # Install fnm if not installed
 if ! command -v fnm >/dev/null 2>&1; then
     echo "fnm is not installed..."
