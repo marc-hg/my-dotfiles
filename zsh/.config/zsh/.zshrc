@@ -58,7 +58,7 @@ zsh_add_plugin "zsh-users/zsh-completions"
 bindkey -s '^p' 'ranger^M'
 bindkey -s '^f' 'zi^M'
 bindkey -s '^s' 'ncdu^M'
-bindkey -s '^n' 'nvim $(fzf)^M'
+bindkey -s '^n' 'lvim $(fzf)^M'
 # bindkey -s '^v' 'nvim\n'
 bindkey -s '^z' 'zi^M'
 bindkey '^[[P' delete-char
@@ -75,7 +75,7 @@ bindkey -r "^d"
 [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f $ZDOTDIR/completion/_fnm ] && fpath+="$ZDOTDIR/completion/"
-# export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
+export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
 compinit
 
 # Edit line in vim with ctrl-e:
@@ -83,7 +83,7 @@ autoload edit-command-line; zle -N edit-command-line
 # bindkey '^e' edit-command-line
 
 # Environment variables set everywhere
-export EDITOR="nvim"
+export EDITOR="lvim"
 export TERMINAL="alacritty"
 export BROWSER="brave"
 
