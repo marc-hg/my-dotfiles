@@ -21,6 +21,7 @@ lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 vim.cmd [[imap <silent><script><expr> <C-A> copilot#Accept("\<CR>")]]
 vim.g.copilot_no_tab_map = true
+vim.cmd [[nnoremap q <c-v>]]
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- unmap a default keymapping

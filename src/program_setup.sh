@@ -61,15 +61,6 @@ if ! command -v ripgrep >/dev/null 2>&1; then
     fi
 fi
 
-# Install lazygit if not installed
-if ! command -v lazygit >/dev/null 2>&1; then
-    echo "lazygit is not installed. This is needed for neovim telescope"
-    if want_act "Do you want to install lazygit?"; then
-        echo "Installing lazygit..."
-        sudo apt install lazygit -y
-        echo "Done"
-    fi
-fi
 
 # Install fnm if not installed
 if ! command -v fnm >/dev/null 2>&1; then
@@ -155,17 +146,15 @@ if ! command -v zoxide >/dev/null 2>&1; then
 fi
 
 # install lvim if not installed
-# if ! command -v nvim >/dev/null 2>&1; then
-#     echo "lvim is not installed..."
-#     # Do you want to install nvim?
-#     # if want_act "Do you want to install lvim?"; then
-#     #     # wget https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-linux64.deb
-#     #     # sudo apt install ./nvim-linux64.deb
-#     #     # export PATH=$PATH:~/.local/bin
-#     #     # bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
-#     # fi
-    
-# fi
+if ! command -v lvim >/dev/null 2>&1; then
+    echo "lvim is not installed..."
+    # Do you want to install lvim?
+    if want_act "Do you want to install lvim?"; then
+        echo "Installing lvim..."
+        bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+        echo "Done"
+    fi
+fi
 
 # Install zsh if not installed
 if ! command -v zsh >/dev/null 2>&1; then
@@ -175,6 +164,19 @@ if ! command -v zsh >/dev/null 2>&1; then
         echo "Installing zsh..."
         sudo apt install zsh -y
         chsh -s $(which zsh)
+        echo "Done"
+    fi
+fi
+
+# Install lazygit if not installed
+if ! command -v lazygit >/dev/null 2>&1; then
+    echo "lazygit is not installed..."
+    # Do you want to install lazygit?
+    if want_act "Do you want to install lazygit?"; then
+        echo "Installing lazygit..."
+        LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[0-35.]+')
+        curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+        sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
         echo "Done"
     fi
 fi

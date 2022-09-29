@@ -53,4 +53,10 @@ if want_act "Set up conf for nvim?"; then
     echo "Done"
 fi
 
+if want_act "Set up conf for lvim?"; then
+    echo "Setting up conf for lvim..."
+    stow lvim
+    echo "Done"
+fi
+
 cd $CURRENT_PATH
