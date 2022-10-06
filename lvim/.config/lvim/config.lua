@@ -166,6 +166,7 @@ lvim.builtin.treesitter.highlight.enable = true
 --   },
 -- }
 
+-- Additional Plugins
 lvim.plugins = {
   { "github/copilot.vim" }
 }
