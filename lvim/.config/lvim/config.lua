@@ -19,7 +19,12 @@ lvim.colorscheme = "tokyonight"
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+-- Map fast jk to normal mode
+vim.api.nvim_set_keymap('i', 'jk', '<ESC>', {noremap = true, silent = true})
+
 vim.cmd [[imap <silent><script><expr> <C-A> copilot#Accept("\<CR>")]]
+vim.cmd [[imap <silent><script><expr> <C-D> copilot#Previous()]]
+vim.cmd [[imap <silent><script><expr> <C-E> copilot#Next()]]
 vim.g.copilot_no_tab_map = true
 vim.cmd [[nnoremap q <c-v>]]
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
