@@ -1,9 +1,7 @@
 FROM debian:stable
 
-
-
-RUN apt-get update
-RUN apt-get install -y stow sudo
+RUN apt-get update --fix-missing
+RUN apt-get install stow sudo git -y
 
 
 # Set user and group
@@ -22,4 +20,4 @@ COPY . ./dotfiles
 
 
 RUN ~/dotfiles/src/conf_setup.sh --yes
- RUN ~/dotfiles/src/program_setup.sh --yes
+RUN ~/dotfiles/src/program_setup.sh --yes
