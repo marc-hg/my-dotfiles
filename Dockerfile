@@ -1,7 +1,7 @@
 FROM debian:stable
 
 RUN apt-get update --fix-missing
-RUN apt-get install stow sudo git -y
+RUN apt-get install stow sudo git make -y
 
 
 # Set user and group
@@ -19,5 +19,6 @@ WORKDIR /home/${user}
 COPY . ./dotfiles
 
 
-RUN ~/dotfiles/src/conf_setup.sh --yes
-RUN ~/dotfiles/src/program_setup.sh --yes
+# RUN ~/dotfiles/src/conf_setup.sh --yes
+RUN ~/dotfiles/src/program_setup.sh --yes --nodocker
+

@@ -2,6 +2,7 @@
 set -e # Exit with nonzero exit code if anything fails
 BASE_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; cd .. ;  pwd -P )"
 [[ $1 = --yes ]] && yes_mode=1
+[[ $2 = --nodocker ]] && nodocker_mode=1
 want_act() {
     [[ $yes_mode = 1 ]] && return 0
     read -r -p "'$1' (y/n)? " answer
@@ -68,7 +69,7 @@ if ! command -v fnm >/dev/null 2>&1; then
     # Do you want to install fnm?
     if want_act "Do you want to install fnm?"; then
         echo "Installing fnm..."
-        curl -fsSL https://fnm.vercel.app/install | bash
+        curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
         echo "Done"
     fi
 fi
@@ -79,7 +80,7 @@ if ! command -v cargo >/dev/null 2>&1; then
     # Do you want to install cargo?
     if want_act "Do you want to install cargo?"; then
         echo "Installing cargo..."
-        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
         echo "Done"
     fi
 fi
@@ -96,8 +97,8 @@ if ! command -v zsh >/dev/null 2>&1; then
     fi
 fi
 
-# Install docker if not installed
-if ! command -v docker >/dev/null 2>&1; then
+# Install docker if not installed and if not in nodocker mode
+if ! command -v docker >/dev/null 2>&1 && [[ $nodocker_mode != 1 ]]; then
     echo "docker is not installed..."
     # Do you want to install docker?
     echo "Do you want to install docker?"
@@ -174,7 +175,7 @@ if ! command -v lazygit >/dev/null 2>&1; then
         echo "Installing lazygit..."
         LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[0-35.]+')
         curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
-        judo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
+        sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
         rm -rf ./lazygit.tar.gz
         echo "Done"
     fi

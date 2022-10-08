@@ -29,6 +29,7 @@ if want_act "Set up conf for zsh?"; then
 
     if want_act "Want to also set up powerlevel10k (cool terminal theme)?"; then
         echo "Downloading powerlevel10k..."
+        rm -rf ~/.config/zsh/themes/powerlevel10k
         git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ~/.config/zsh/powerlevel10k
         echo "Done"
     fi
