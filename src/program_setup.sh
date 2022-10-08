@@ -84,6 +84,18 @@ if ! command -v cargo >/dev/null 2>&1; then
     fi
 fi
 
+# Install zsh if not installed
+if ! command -v zsh >/dev/null 2>&1; then
+    echo "zsh is not installed..."
+    # Do you want to install zsh?
+    if want_act "Do you want to install zsh?"; then
+        echo "Installing zsh..."
+        sudo apt install zsh -y
+        chsh -s $(which zsh)
+        echo "Done"
+    fi
+fi
+
 # Install docker if not installed
 if ! command -v docker >/dev/null 2>&1; then
     echo "docker is not installed..."
@@ -127,9 +139,7 @@ if ! command -v nvim >/dev/null 2>&1; then
     # Do you want to install neovim?
     if want_act "Do you want to install neovim?"; then
         echo "Installing neovim..."
-	curl -LO https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-linux64.deb && 
-	sudo apt install ./nvim-linux64.deb
-	rm -f ./nvim-linux64.deb
+        bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/rolling/utils/installer/install-neovim-from-release)
         echo "Done"
     fi
 fi
@@ -151,19 +161,7 @@ if ! command -v lvim >/dev/null 2>&1; then
     # Do you want to install lvim?
     if want_act "Do you want to install lvim?"; then
         echo "Installing lvim..."
-        bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
-        echo "Done"
-    fi
-fi
-
-# Install zsh if not installed
-if ! command -v zsh >/dev/null 2>&1; then
-    echo "zsh is not installed..."
-    # Do you want to install zsh?
-    if want_act "Do you want to install zsh?"; then
-        echo "Installing zsh..."
-        sudo apt install zsh -y
-        chsh -s $(which zsh)
+        LV_BRANCH=rolling bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installer/install.sh)
         echo "Done"
     fi
 fi
@@ -176,7 +174,8 @@ if ! command -v lazygit >/dev/null 2>&1; then
         echo "Installing lazygit..."
         LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[0-35.]+')
         curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
-        sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
+        judo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
+        rm -rf ./lazygit.tar.gz
         echo "Done"
     fi
 fi

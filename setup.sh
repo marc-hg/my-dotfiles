@@ -3,6 +3,7 @@
 echo 'Welcome to my conf and common programs installer'
 echo 'Do you want to install programs or conf files?'
 
+# Install programs or conf files ?
 read -p 'Install programs or conf files? [p/c] ' -n 1 -r
 echo
 
