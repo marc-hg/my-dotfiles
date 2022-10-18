@@ -11,7 +11,7 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "tokyonight"
+lvim.colorscheme = "catppuccin"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -312,9 +312,8 @@ lvim.plugins = {
   },
   { "github/copilot.vim" },
   { "catppuccin/nvim", as = "catppuccin" },
-
+  { "morhetz/gruvbox", as = "gruvbox" },
 }
-
 vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
 require("catppuccin").setup {
   transparent_background = true,
@@ -326,6 +325,20 @@ require("catppuccin").setup {
     -- TSConstant = { fg = colors.sky },
     -- TSComment = { fg = colors.surface2, style = { "italic" } }
   },
+  styles = {
+    comments = { "italic" },
+    conditionals = { "italic" },
+    loops = {},
+    functions = {},
+    keywords = {},
+    strings = {},
+    variables = {},
+    numbers = {},
+    booleans = {},
+    properties = {},
+    types = {},
+    operators = {},
+  },
   integrations = {
     illuminate = true,
     which_key = true,
@@ -335,7 +348,7 @@ require("catppuccin").setup {
     telescope = true
   },
 }
-lvim.colorscheme = "catppuccin"
+-- lvim.colorscheme = "catppuccin"
 -- vim.api.nvim_create_autocmd("BufEnter", {
 --   pattern = { "*.json", "*.jsonc" },
 --   -- enable wrap mode for json files only
