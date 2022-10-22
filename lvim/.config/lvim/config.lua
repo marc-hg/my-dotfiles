@@ -11,7 +11,7 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "catppuccin"
+lvim.colorscheme = "gruvbox"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -19,12 +19,14 @@ lvim.colorscheme = "catppuccin"
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+lvim.keys.normal_mode["<M-z>"] = ":set wrap!<cr>"
 -- Map fast jk to normal mode
 vim.api.nvim_set_keymap('i', 'jk', '<ESC>', { noremap = true, silent = true })
 
 vim.cmd [[imap <silent><script><expr> <C-A> copilot#Accept("\<CR>")]]
 vim.cmd [[imap <silent><script><expr> <C-D> copilot#Previous()]]
 vim.cmd [[imap <silent><script><expr> <C-E> copilot#Next()]]
+
 vim.g.copilot_no_tab_map = true
 vim.cmd [[nnoremap q <c-v>]]
 
@@ -312,11 +314,16 @@ lvim.plugins = {
   },
   { "github/copilot.vim" },
   { "catppuccin/nvim", as = "catppuccin" },
-  { "morhetz/gruvbox", as = "gruvbox" },
+  { "gruvbox-community/gruvbox", as = "gruvbox" },
+  { "tanvirtin/monokai.nvim", as = "monokai" },
+  { "cpea2506/one_monokai.nvim", as = "one_monokai" },
+  { 'lalitmee/cobalt2.nvim', requires = 'tjdevries/colorbuddy.nvim' },
+  { "luisiacc/gruvbox-baby", as = "gruvbox-baby" },
 }
+lvim.transparent_window = true
 vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
 require("catppuccin").setup {
-  transparent_background = true,
+  transparent_background = false,
   custom_highlights = {
     HarpoonWindow = { ctermbg = 238 },
     HarpoonBorder = { fg = "#8AADF4" },
