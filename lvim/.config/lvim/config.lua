@@ -10,8 +10,8 @@ an executable
 
 -- general
 lvim.log.level = "warn"
-lvim.format_on_save = true
-lvim.colorscheme = "gruvbox"
+lvim.format_on_save.enabled = false
+lvim.colorscheme = "lunar"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -19,19 +19,6 @@ lvim.colorscheme = "gruvbox"
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
-lvim.keys.normal_mode["<M-z>"] = ":set wrap!<cr>"
--- Map fast jk to normal mode
-vim.api.nvim_set_keymap('i', 'jk', '<ESC>', { noremap = true, silent = true })
-
-vim.cmd [[imap <silent><script><expr> <C-A> copilot#Accept("\<CR>")]]
-vim.cmd [[imap <silent><script><expr> <C-D> copilot#Previous()]]
-vim.cmd [[imap <silent><script><expr> <C-E> copilot#Next()]]
-
-vim.g.copilot_no_tab_map = true
-vim.cmd [[nnoremap q <c-v>]]
-
-lvim.keys.normal_mode["<C-L>"] = false
-lvim.keys.normal_mode["<C-l>"] = false
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- unmap a default keymapping
@@ -77,7 +64,6 @@ lvim.keys.normal_mode["<C-l>"] = false
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
-lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
@@ -105,7 +91,7 @@ lvim.builtin.treesitter.highlight.enable = true
 
 -- -- make sure server will always be installed even if the server is in skipped_servers list
 -- lvim.lsp.installer.setup.ensure_installed = {
---     "sumeko_lua",
+--     "sumneko_lua",
 --     "jsonls",
 -- }
 -- -- change UI setting of `LspInstallInfo`
@@ -176,8 +162,35 @@ lvim.builtin.treesitter.highlight.enable = true
 --   },
 -- }
 
--- if you don't want all the parsers change this to a table of the ones you want
--- if you don't want all the parsers change this to a table of the ones you want
+-- Additional Plugins
+-- lvim.plugins = {
+--     {
+--       "folke/trouble.nvim",
+--       cmd = "TroubleToggle",
+--     },
+-- }
+
+-- Autocommands (https://neovim.io/doc/user/autocmd.html)
+-- vim.api.nvim_create_autocmd("BufEnter", {
+--   pattern = { "*.json", "*.jsonc" },
+--   -- enable wrap mode for json files only
+--   command = "setlocal wrap",
+-- })
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "zsh",
+--   callback = function()
+--     -- let treesitter use bash highlight for zsh files as well
+--     require("nvim-treesitter.highlight").attach(0, "bash")
+--   end,
+-- })
+lvim.colorscheme = "gruvbox"
+lvim.keys.normal_mode["<M-z>"] = ":set wrap!<cr>"
+vim.cmd [[imap <silent><script><expr> <C-A> copilot#Accept("\<CR>")]]
+vim.g.copilot_no_tab_map = true
+vim.cmd [[nnoremap q <c-v>]]
+
+lvim.keys.normal_mode["<C-L>"] = false
+lvim.keys.normal_mode["<C-l>"] = false
 lvim.builtin.treesitter.ensure_installed = {
   "lua",
   "rust",
@@ -195,9 +208,6 @@ lvim.builtin.treesitter.ensure_installed = {
 
 lvim.builtin.dap.active = true
 lvim.builtin.treesitter.highlight.enable = true
-
-vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })
-
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   { command = "stylua", filetypes = { "lua" } },
@@ -355,16 +365,23 @@ require("catppuccin").setup {
     telescope = true
   },
 }
--- lvim.colorscheme = "catppuccin"
--- vim.api.nvim_create_autocmd("BufEnter", {
---   pattern = { "*.json", "*.jsonc" },
---   -- enable wrap mode for json files only
---   command = "setlocal wrap",
--- })
--- vim.api.nvim_create_autocmd("FileType", {
---   pattern = "zsh",
---   callback = function()
---     -- let treesitter use bash highlight for zsh files as well
---     require("nvim-treesitter.highlight").attach(0, "bash")
---   end,
--- })
+-- if statement
+local is_wsl = (function()
+  local output = vim.fn.systemlist "uname -r"
+  return not not string.find(output[1] or "", "WSL")
+end)()
+
+if is_wsl then
+  vim.g.clipboard = {
+    name = 'win32yank-wsl',
+    copy = {
+      ['+'] = '/mnt/v/wsl2/win32yank.exe -i --crlf',
+      ['*'] = '/mnt/v/wsl2/win32yank.exe -i --crlf',
+    },
+    paste = {
+      ['+'] = '/mnt/v/wsl2/win32yank.exe -o --lf',
+      ['*'] = '/mnt/v/wsl2/win32yank.exe -o --lf',
+    },
+    cache_enabled = 0,
+  }
+end
