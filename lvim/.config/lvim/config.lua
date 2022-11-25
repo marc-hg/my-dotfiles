@@ -385,3 +385,12 @@ if is_wsl then
     cache_enabled = 0,
   }
 end
+lvim.builtin.which_key.mappings.t = { function()
+  local buf = vim.api.nvim_get_current_buf()
+  local file = vim.api.nvim_buf_get_name(buf)
+  local folder = string.gsub(file, "/[^/]+$", "")
+  folder = folder ~= "" and folder or vim.fn.getcwd()
+  vim.cmd("TermExec cmd=\"cd " .. folder .. "\"")
+end, "open terminal next to the file" }
+
+lvim.keys.term_mode = {}
