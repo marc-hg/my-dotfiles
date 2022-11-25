@@ -394,3 +394,4 @@ lvim.builtin.which_key.mappings.t = { function()
 end, "open terminal next to the file" }
 
 lvim.keys.term_mode = {}
+vim.keymap.del("t", "<C-l>")
