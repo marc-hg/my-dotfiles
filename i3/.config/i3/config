@@ -45,6 +45,11 @@ bindsym xf86audiolowervolume exec --no-startup-id pactl set-sink-volume @default
 bindsym xf86audiomute exec --no-startup-id pactl set-sink-mute @default_sink@ toggle && $refresh_i3status
 bindsym xf86audiomicmute exec --no-startup-id pactl set-source-mute @default_source@ toggle && $refresh_i3status
 
+# set brightness bindings
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
+
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -185,7 +190,7 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-}
+
 bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
