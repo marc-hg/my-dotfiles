@@ -22,6 +22,8 @@ lvim.builtin.treesitter.ensure_installed = {
   "java",
   "yaml",
 }
+-- The greatest remap ever
+
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
 lvim.keys.normal_mode["<M-z>"] = ":set wrap!<cr>"
@@ -43,6 +45,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "rust",
   "toml",
 }
+
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   { command = "stylua", filetypes = { "lua" } },
@@ -229,3 +232,5 @@ end, "open terminal next to the file" }
 
 lvim.keys.term_mode = {}
 vim.keymap.del("t", "<C-l>")
+-- greatest remap ever
+vim.keymap.set("x", "<leader>p", '"_dP', { noremap = true })
