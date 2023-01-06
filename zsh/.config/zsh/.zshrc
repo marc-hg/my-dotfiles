@@ -103,7 +103,7 @@ fi
 # fnm
 
 # fnm
-export PATH=/home/myuser/.fnm:$PATH
+export PATH=/home/$USER/.fnm:$PATH
 eval "`fnm env`"
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
