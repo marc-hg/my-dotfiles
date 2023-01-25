@@ -26,6 +26,8 @@ alias zsh-update="git -C ~/my-dotfiles pull && zsh"
 alias zsh_update="zsh-update"
 alias zsh-update-force="git restore ~/my-dotfiles && git -C ~/my-dotfiles reset --hard origin/main && git -C ~/my-dotfiles pull && zsh"
 alias zsh_update_force="zsh-update-force"
+alias zsh_push="cd ~/my-dotfiles && git add . && git commit -m 'changes' && git push && cd -"
+alias zsh-push="cd ~/my-dotfiles && git add . && git commit -m 'changes' && git push && cd -"
 
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
