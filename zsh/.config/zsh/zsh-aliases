@@ -22,16 +22,16 @@ alias mypurge='sudo apt-get purge --auto-remove'
 alias myprune='sudo apt-get purge --auto-remove'
 
 # Sync keys
-alias sync-ssh="rsync -a --exclude='.git' livb@192.168.0.10:/home/livb/.ssh/ ~/.ssh"
-alias sync-ssh="rsync -a --exclude='.git' livb@192.168.0.10:/home/livb/.ssh/ ~/.ssh"
+alias sync-ssh="rsync -a --exclude='.git' --exclude='known_hosts' livb@192.168.0.10:/home/livb/.ssh/ ~/.ssh"
+alias sync-ssh="rsync -a --exclude='.git' --exclude='known_hosts' livb@192.168.0.10:/home/livb/.ssh/ ~/.ssh"
 
 # Meta
 alias zsh-update="git -C ~/my-dotfiles pull && zsh"
 alias zsh_update="zsh-update"
 alias zsh-update-force="git restore ~/my-dotfiles && git -C ~/my-dotfiles reset --hard origin/main && git -C ~/my-dotfiles pull && zsh"
 alias zsh_update_force="zsh-update-force"
-alias zsh_push="cd ~/my-dotfiles && git add . && git commit -m 'changes' && git push && cd -"
-alias zsh-push="cd ~/my-dotfiles && git add . && git commit -m 'changes' && git push && cd -"
+alias zsh_push="cd ~/my-dotfiles && git add . && git commit -m 'changes' && git push origin main && cd -"
+alias zsh-push="cd ~/my-dotfiles && git add . && git commit -m 'changes' && git push origin main && cd -"
 
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
