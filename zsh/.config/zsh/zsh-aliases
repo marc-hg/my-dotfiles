@@ -15,11 +15,15 @@ alias lvim_config="rm -f ~/.config/lvim/config.lua && cd ~/my-dotfiles && stow l
 alias lvim-config="rm -f ~/.config/lvim/config.lua && cd ~/my-dotfiles && stow lvim"
 alias lvim_uninstall='bash ~/.local/share/lunarvim/lvim/utils/installer/uninstall.sh'
 alias lvim-uninstall='bash ~/.local/share/lunarvim/lvim/utils/installer/uninstall.sh'
-alias lvim-install="LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)"
-alias lvim_install="LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)"
+alias lvim-install="LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/fc6873809934917b470bff1b072171879899a36b/utils/installer/install.sh)"
+alias lvim_install="LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/fc6873809934917b470bff1b072171879899a36b/utils/installer/install.sh)"
 
 alias mypurge='sudo apt-get purge --auto-remove'
 alias myprune='sudo apt-get purge --auto-remove'
+
+# Sync keys
+alias sync-ssh="rsync -a --exclude='.git' livb@192.168.0.10:/home/livb/.ssh/ ~/.ssh"
+alias sync-ssh="rsync -a --exclude='.git' livb@192.168.0.10:/home/livb/.ssh/ ~/.ssh"
 
 # Meta
 alias zsh-update="git -C ~/my-dotfiles pull && zsh"
