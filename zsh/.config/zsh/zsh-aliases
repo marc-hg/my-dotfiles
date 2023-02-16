@@ -33,6 +33,9 @@ alias zsh_update_force="zsh-update-force"
 alias zsh_push="cd ~/my-dotfiles && git add . && git commit -m 'changes' && git push origin main && cd -"
 alias zsh-push="cd ~/my-dotfiles && git add . && git commit -m 'changes' && git push origin main && cd -"
 
+# Terminal
+alias icat="kitty +kitten icat"
+
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'

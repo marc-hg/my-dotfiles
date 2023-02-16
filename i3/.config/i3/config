@@ -2,37 +2,36 @@ set $mod Mod4
 
 # Load compositor for shadows/fading 
 exec_always --no-startup-id picom
-
 #--------------------------------------------------------------------
 # Set colors from wal
-set $fg #DAEDEB
-set_from_resource $bg i3wm.color8 #252B39
-set_from_resource $ib i3wm.color3 #E47878
-# class                 border  backgr. text indicator child_border
-client.focused          $ib     $bg     $fg  $bg       $ib
-client.focused_inactive $bg     $bg     $fg  $bg       $bg
-client.unfocused        $ib     $bg     $fg  $bg       $bg
-client.urgent           $bg     $bg     $fg  $bg       $bg
-client.placeholder      $bg     $bg     $fg  $bg       $bg
+# set $fg #DAEDEB
+# set_from_resource $bg i3wm.color8 #252B39
+# set_from_resource $ib i3wm.color3 #3792cb
+# # class                 border  backgr. text indicator child_border
+# client.focused          $ib     $bg     $fg  $bg       $ib
+# client.focused_inactive $bg     $bg     $fg  $bg       $bg
+# client.unfocused        $ib     $bg     $fg  $bg       $bg
+# client.urgent           $bg     $bg     $fg  $bg       $bg
+# client.placeholder      $bg     $bg     $fg  $bg       $bg
 
-client.background       $bg
+# client.background       $bg
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:Comic Code Ligatures, MesloLGS NF 10
 
 # GET THEM BORDERS OUT OF HERE
-# for_window [class="^.*"] border pixel 2.5 
-# for_window [class="^.*"] client.focused          #77dd77 #285577 #ffffff #2e9ef4   #285577
+for_window [class="^.*"] border pixel 2.5 
+for_window [class="^.*"] client.focused          #77dd77 #285577 #ffffff #2e9ef4   #285577
 
-gaps inner 20
-gaps outer 0
+# gaps inner 0
+# gaps outer 0
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
 
 # Start polybar
-exec --no-startup-id ~/.config/polybar/launch.sh
+# exec --no-startup-id ~/.config/polybar/launch.sh
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -222,9 +221,9 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-# bar {
-#         status_command i3status
-# }
+bar {
+        status_command i3status
+}
 
 bindsym $mod+Shift+period exec systemctl suspend
 
