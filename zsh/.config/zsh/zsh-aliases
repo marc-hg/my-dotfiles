@@ -26,7 +26,7 @@ alias sync-ssh="rsync -a --exclude='.git' --exclude='known_hosts' livb@192.168.0
 alias sync-ssh="rsync -a --exclude='.git' --exclude='known_hosts' livb@192.168.0.10:/home/livb/.ssh/ ~/.ssh"
 
 # Meta
-alias zsh-update="git -C ~/my-dotfiles pull && zsh"
+alias zsh-update="git -C ~/my-dotfiles pull && git -C ~/my-dotfiles submodule update --recursive && zsh"
 alias zsh_update="zsh-update"
 alias zsh-update-force="git restore ~/my-dotfiles && git -C ~/my-dotfiles reset --hard origin/main && git -C ~/my-dotfiles pull && zsh"
 alias zsh_update_force="zsh-update-force"
