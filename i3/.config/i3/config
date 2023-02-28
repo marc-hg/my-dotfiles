@@ -51,11 +51,10 @@ exec --no-startup-id nm-applet
 
 # use pactl to adjust volume in pulseaudio.
 set $refresh_i3status killall -sigusr1 i3status
-bindsym xf86audioraisevolume exec --no-startup-id pactl set-sink-volume @default_sink@ +10% && $refresh_i3status
-bindsym xf86audiolowervolume exec --no-startup-id pactl set-sink-volume @default_sink@ -10% && $refresh_i3status
-bindsym xf86audiomute exec --no-startup-id pactl set-sink-mute @default_sink@ toggle && $refresh_i3status
-bindsym xf86audiomicmute exec --no-startup-id pactl set-source-mute @default_source@ toggle && $refresh_i3status
-
+# Sound controls
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle
 # set brightness bindings
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
