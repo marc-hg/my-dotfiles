@@ -32,6 +32,8 @@ alias zsh-update-force="git restore ~/my-dotfiles && git -C ~/my-dotfiles reset 
 alias zsh_update_force="zsh-update-force"
 alias zsh_push="cd ~/my-dotfiles && git add . && git commit -m 'changes' && git push origin main && cd -"
 alias zsh-push="cd ~/my-dotfiles && git add . && git commit -m 'changes' && git push origin main && cd -"
+alias zsh-set-remote="git -C ~/my-dotfiles remote rm origin && git -C ~/my-dotfiles remote add origin git@github:marc-hg/my-dotfiles.git"
+alias zsh_set_remote="zsh-set-remote"
 
 # Programs
 alias yt="yt-dlp"
