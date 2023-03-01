@@ -12,6 +12,7 @@ export PATH=$HOME/.fnm:$PATH
 # export PATH=$HOME/.z/bin:$PATH
 export PATH="$HOME/.local/share/neovim/bin":$PATH
 export PATH="/data/data/com.termux/files/home/.local/share/fnm:$PATH"
+export PATH="$HOME/my-dotfiles/greenclip/bin:$PATH"
 # . ~/.local/share/z/bin/z.sh
 #export PATH="$PATH:./node_modules/.bin"
 # 
