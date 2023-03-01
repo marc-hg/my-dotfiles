@@ -127,3 +127,11 @@ eval "`fnm env`"
 # unset __conda_setup
 # <<< conda initialize <<<
 
+
+# fnm
+export PATH="/home/mhorno/.local/share/fnm:$PATH"
+eval "`fnm env`"
+
+# fnm
+export PATH="/home/mhorno/.local/share/fnm:$PATH"
+eval "`fnm env`"

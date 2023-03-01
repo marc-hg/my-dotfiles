@@ -15,7 +15,8 @@ export PATH="/data/data/com.termux/files/home/.local/share/fnm:$PATH"
 # . ~/.local/share/z/bin/z.sh
 #export PATH="$PATH:./node_modules/.bin"
 # 
-# 
+#  # fnm
+export PATH="/home/mhorno/.local/share/fnm:$PATH"
 if  command -v fnm >/dev/null 2>&1; then
     eval "$(fnm env)"
 fi

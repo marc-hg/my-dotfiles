@@ -25,7 +25,8 @@ for_window [class="^.*"] client.focused          #77dd77 #285577 #ffffff #2e9ef4
 
 # gaps inner 0
 # gaps outer 0
-
+# Launch xscreensaver if it exists
+exec --no-startup-id xscreensaver -no-splash
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -58,6 +59,8 @@ bindsym XF86AudioMute exec amixer -q set Master toggle
 # set brightness bindings
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+# i sleep
+bindsym XF86Sleep exec systemctl suspend
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
