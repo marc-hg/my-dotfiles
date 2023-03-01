@@ -34,7 +34,7 @@ alias zsh_push="cd ~/my-dotfiles && git add . && git commit -m 'changes' && git 
 alias zsh-push="cd ~/my-dotfiles && git add . && git commit -m 'changes' && git push origin main && cd -"
 
 # Docker
-alias docker-compose="docker compose --compatibility $@"
+# alias docker-compose='docker compose'
 
 # Terminal
 alias icat="kitty +kitten icat"
