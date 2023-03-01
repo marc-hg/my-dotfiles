@@ -11,13 +11,13 @@ general {
         interval = 5
 }
 
-order += "disk /"
 order += "battery all"
-order += "load"
+order += "disk /"
+# order += "load"
 order += "tztime local"
 
 battery all {
-        format = "%status %percentage %remaining %emptytime"
+        format = "%status %percentage"
         format_down = "No battery"
         status_chr = "⚡ CHR"
         status_bat = "🔋 BAT"
