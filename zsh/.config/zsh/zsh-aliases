@@ -33,8 +33,10 @@ alias zsh_update_force="zsh-update-force"
 alias zsh_push="cd ~/my-dotfiles && git add . && git commit -m 'changes' && git push origin main && cd -"
 alias zsh-push="cd ~/my-dotfiles && git add . && git commit -m 'changes' && git push origin main && cd -"
 
-# Docker
-# alias docker-compose='docker compose'
+# Programs
+alias yt="yt-dlp"
+alias youtube-dl="yt"
+alias yt-audio="yt --extract-audio --audio-format mp3"
 
 # Terminal
 alias icat="kitty +kitten icat"
