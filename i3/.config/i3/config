@@ -258,8 +258,8 @@ exec --no-startup-id google-chrome-stable
 exec --no-startup-id notion-app
 exec --no-startup-id todoist
 exec --no-startup-id spotify
-exec --no-startup-id feh --bg-fill ~/Images/Wallpapers/wp5501309-wide-anime-wallpapers.jpg
+exec --no-startup-id feh -feh --randomize --bg-fill ~/Pictures/Wallpapers/
 
-bindsym $mod+Shift+w exec --no-startup-id feh --randomize --bg-fill ~/Images/Wallpapers
+bindsym $mod+Shift+w exec --no-startup-id feh --randomize --bg-fill ~/Pictures/Wallpapers/
 
 bindsym $mod+Shift+m exec --no-startup-id ~/.scripts/restore.sh
