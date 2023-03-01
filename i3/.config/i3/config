@@ -62,6 +62,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 # i sleep
 bindsym XF86Sleep exec systemctl suspend
 
+# Switch between laptop and external monitor
+bindcode $mod+m exec --no-startup-id ~/my-dotfiles/i3/.config/i3/switchmonitor.sh
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
