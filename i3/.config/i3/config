@@ -63,7 +63,7 @@ bindsym $mod+XF86AudioMute exec playerctl play-pause
 # set brightness bindings
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
-# i sleep
+# I sleep
 bindsym XF86Sleep exec systemctl suspend
 
 # Switch between laptop and external monitor
