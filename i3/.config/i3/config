@@ -56,6 +56,10 @@ set $refresh_i3status killall -sigusr1 i3status
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
+# Media controls
+bindsym $mod+XF86AudioRaiseVolume exec playerctl next
+bindsym $mod+XF86AudioLowerVolume exec playerctl next
+bindsym $mod+XF86AudioMute exec playerctl play-pause
 # set brightness bindings
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
@@ -266,7 +270,7 @@ exec --no-startup-id google-chrome-stable
 exec --no-startup-id notion-snap
 exec --no-startup-id todoist
 exec --no-startup-id slack
-exec --no-startup-id spotify
+exec --no-startup-id flatpak run com.spotify.Client
 exec --no-startup-id feh -feh --randomize --bg-fill ~/Pictures/Wallpapers/
 
 bindsym $mod+Shift+w exec --no-startup-id feh --randomize --bg-fill ~/Pictures/Wallpapers/

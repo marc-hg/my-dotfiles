@@ -12,9 +12,10 @@ general {
 }
 
 order += "battery all"
-order += "disk /"
-# order += "load"
+order += "volume master"
+order += "load"
 order += "tztime local"
+# order += "disk /"
 
 battery all {
         format = "%status %percentage"
@@ -28,14 +29,21 @@ battery all {
 }
 
 tztime local {
-        format = "%Y-%m-%d %H:%M:%S"
+        format = "%Y-%m-%d %H:%M"
 }
 
 load {
-        format = "%1min"
+        format = " %1min"
 }
 
 disk "/" {
         format = "%avail"
 }
 
+volume master {
+        format = "  %volume "
+        format_muted = "  %volume "
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
