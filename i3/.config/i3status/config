@@ -42,7 +42,7 @@ disk "/" {
 
 volume master {
         format = "  %volume "
-        format_muted = "  %volume "
+        format_muted = " %volume "
         device = "default"
         mixer = "Master"
         mixer_idx = 0
