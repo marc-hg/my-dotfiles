@@ -39,8 +39,10 @@ load {
 }
 
 wireless wlp59s0 {
-    format_up = "W: (%quality at %essid) %ip                                                                                                      "
-    format_down = "W: down"
+    # format_up = " (%quality at %essid) %ip"
+    # format_up = " (%quality at %essid) %ip                                                                                                      "
+    format_up = " %quality %ip"
+    format_down = " down"
     format_quality ="%03d%s"
 }
 
