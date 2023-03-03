@@ -20,13 +20,13 @@ order += "tztime local"
 # order += "disk /"
 
 battery all {
-        format = "%status %percentage"
-        format_percentage = "%.00f%s"
+        format = "%status %percentage" #" %remaining"
+        integer_battery_capacity = true
         last_full_capacity = false
         format_down = "No battery"
-        status_chr = "⚡ CHR"
-        status_bat = "🔋 BAT"
-        status_unk = "? UNK"
+        status_chr = "⚡"
+        status_bat = "🔋"
+        status_unk = "?"
         status_full = "☻ FULL"
         path = "/sys/class/power_supply/CMB0%d/uevent"
         low_threshold = 15
