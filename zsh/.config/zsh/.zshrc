@@ -100,11 +100,7 @@ else
 fi
 
 
-# fnm
 
-# fnm
-export PATH=/home/$USER/.fnm:$PATH
-eval "`fnm env`"
 
 # tmux
 # if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
@@ -129,9 +125,5 @@ eval "`fnm env`"
 
 
 # fnm
-export PATH="/home/mhorno/.local/share/fnm:$PATH"
-eval "`fnm env`"
-
-# fnm
-export PATH="/home/mhorno/.local/share/fnm:$PATH"
+export PATH="/home/${USER}/.local/share/fnm:$PATH"
 eval "`fnm env`"
