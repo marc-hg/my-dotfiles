@@ -1,12 +1,15 @@
 #!/bin/bash
 
-# Get the current state of the HDMI output
-output_status=$(xrandr | grep "HDMI-1" | awk '{print $2}')
+# Get the current state of the external monitor
+output=$(xrandr --query | grep "HDMI-1 connected" | cut -d ' ' -f2)
 
-# If the HDMI output is disconnected, turn it on and disable the laptop display
-if [ "$output_status" == "disconnected" ]; then
-    xrandr --output HDMI-1 --auto --output eDP-1 --off
-# If the HDMI output is connected, turn it off and enable the laptop display
+if [ "$output" = "connected" ]; then
+  # If the external monitor is disconnected, switch to external monitor only
+  xrandr --output eDP-1 --off --output HDMI-1 --auto --primary
+  pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:hdmi-stereo
 else
-    xrandr --output HDMI-1 --off --output eDP-1 --auto
+  # If the external monitor is connected, switch to laptop screen only
+  xrandr --output HDMI-1 --off --output eDP-1 --auto --primary
+  pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:analog-stereo
 fi
+feh --randomize --preload --bg-fill ~/Pictures/Wallpapers/
