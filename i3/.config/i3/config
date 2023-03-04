@@ -58,7 +58,7 @@ bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
 # Media controls
 bindsym $mod+XF86AudioRaiseVolume exec playerctl next
-bindsym $mod+XF86AudioLowerVolume exec playerctl next
+bindsym $mod+XF86AudioLowerVolume exec playerctl previous
 bindsym $mod+XF86AudioMute exec playerctl play-pause
 # set brightness bindings
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
