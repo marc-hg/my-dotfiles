@@ -255,18 +255,19 @@ bar {
 # ---------------------------------
 # App assignments to workspaces
 # ---------------------------------
-assign [class="jetbrains-phpstorm"] $ws3
-assign [class="jetbrains-webstorm"] $ws3
-assign [class="jetbrains-pycharm"] $ws3
-assign [class="intellij-idea-ultimate"] $ws3
+assign [class="jetbrains-phpstorm"] $ws2
+assign [class="jetbrains-webstorm"] $ws2
+assign [class="jetbrains-pycharm"] $ws2
+assign [class="intellij-idea-ultimate"] $ws2
 assign [class="notion"] $ws5
 assign [class="Todoist"] $ws6
 assign [class="Spotify"] $ws8
 assign [class="discord"] $ws9
 assign [class="Slack"] $ws9
-assign [class="Google-chrome"] $ws10
+assign [class="Google-chrome"] $ws3
 for_window [class="^Spotify"] move --no-auto-back-and-forth to workspace $ws8
 for_window [class="^discord"] move --no-auto-back-and-forth to workspace $ws9
+for_window [class="^Google"] move --no-auto-back-and-forth to workspace $ws3
 # for_window [class="^kitty"] move --no-auto-back-and-forth to workspace $ws10
 # Startup daemons
 exec --no-startup-id flameshot
