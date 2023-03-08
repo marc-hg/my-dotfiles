@@ -303,4 +303,5 @@ exec --no-startup-id notion-snap
 exec --no-startup-id todoist
 exec --no-startup-id slack
 exec --no-startup-id flatpak run com.spotify.Client
+exec --no-startup-id flatpak run com.todoist.Todoist
 
