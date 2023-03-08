@@ -199,9 +199,10 @@ bindsym $alt+7 workspace number $ws7
 bindsym $alt+6 workspace number $ws6
 bindsym $alt+5 workspace number $ws5
 bindsym $alt+4 workspace number $ws4
-bindsym $alt+3 workspace number $ws3
-bindsym $alt+2 workspace number $ws2
-bindsym $alt+1 workspace number $ws1
+# Dont uncomment these below, I'm using them for nvim terminals
+# bindsym $alt+3 workspace number $ws3
+# bindsym $alt+2 workspace number $ws2
+# bindsym $alt+1 workspace number $ws1
 
 
 # move focused container to workspace
