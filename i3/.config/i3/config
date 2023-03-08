@@ -296,7 +296,7 @@ exec --no-startup-id ~/my-dotfiles/greenclip/bin/greenclip daemon
 exec --no-startup-id feh -feh --randomize --bg-fill ~/Pictures/Wallpapers/
 
 exec --no-startup-id idea
-exec --no-startup-id firefox https://chat.openai.com/chat
+exec --no-startup-id firefox
 exec --no-startup-id Discord
 exec --no-startup-id google-chrome-stable
 exec --no-startup-id notion-snap
@@ -304,4 +304,5 @@ exec --no-startup-id todoist
 exec --no-startup-id slack
 exec --no-startup-id flatpak run com.spotify.Client
 exec --no-startup-id flatpak run com.todoist.Todoist
+exec --no-startup-id ~/Applications/todoist_a9b6b15f00167a43359ac7ed6d5af3be
 
