@@ -97,6 +97,12 @@ bindsym $mod+d exec rofi -show drun -theme gruvbox-dark -font "Comic Code Ligatu
 bindsym $mod+Tab exec rofi -show window -theme gruvbox-dark -font "Comic Code Ligatures 12" -show-icons
 # Set Rofi clipboard
 bindsym $mod+c exec rofi -modi "clipboard:~/my-dotfiles/greenclip/bin/greenclip print" -show clipboard -run-command '{cmd}'
+
+
+bindsym $mod+n exec thunar
+for_window [class="FXTerm"] floating enable
+bindsym $mod+t exec --no-startup-id kitty --class FXTerm
+
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -289,6 +295,8 @@ assign [class="firefox"] $ws10
 for_window [class="^jetbrains-idea"] move --no-auto-back-and-forth to workspace $ws2
 for_window [class="^discord"] move --no-auto-back-and-forth to workspace $ws4
 for_window [class="^Spotify"] move --no-auto-back-and-forth to workspace $ws7
+
+for_window [class="Thunar"] floating enable
 # for_window [class="^Google"] move --no-auto-back-and-forth to workspace $ws3 TODO NOT SURE IF NEEDED
 
 # Startup daemons

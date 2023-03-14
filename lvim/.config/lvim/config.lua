@@ -131,8 +131,8 @@ vim.opt.relativenumber  = true
 vim.cmd [[imap <silent><script><expr> <C-A> copilot#Accept("\<CR>")]]
 vim.g.copilot_no_tab_map = true
 vim.cmd [[nnoremap q <c-v>]]
-lvim.keys.normal_mode["<C-L>"] = false
-lvim.keys.normal_mode["<C-l>"] = false
+-- lvim.keys.normal_mode["<C-L>"] = false
+-- lvim.keys.normal_mode["<C-l>"] = false
 lvim.builtin.treesitter.ensure_installed = {
   "lua",
   "rust",
@@ -336,7 +336,7 @@ lvim.builtin.which_key.mappings.t = { function()
 end, "open terminal next to the file" }
 
 lvim.keys.term_mode = {}
-vim.keymap.del("t", "<C-l>")
+-- vim.keymap.del("t", "<C-l>")
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", '"_dP', { noremap = true })
 vim.opt.relativenumber = true
