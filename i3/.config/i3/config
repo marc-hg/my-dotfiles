@@ -96,7 +96,7 @@ bindsym $mod+d exec rofi -show drun -theme gruvbox-dark -font "Comic Code Ligatu
 # Set Rofi as the default window switcher
 bindsym $mod+Tab exec rofi -show window -theme gruvbox-dark -font "Comic Code Ligatures 12" -show-icons
 # Set Rofi clipboard
-bindsym $mod+c exec rofi -modi "clipboard:~/my-dotfiles/greenclip/bin/greenclip print" -show clipboard -run-command '{cmd}'
+bindsym $mod+v exec rofi -modi "clipboard:~/my-dotfiles/greenclip/bin/greenclip print" -show clipboard -run-command '{cmd}'
 
 
 bindsym $mod+n exec thunar
