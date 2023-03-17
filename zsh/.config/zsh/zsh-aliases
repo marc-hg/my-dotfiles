@@ -24,7 +24,7 @@ alias myprune='sudo apt-get purge --auto-remove'
 alias git_change_remote="git -C ~/my-dotfiles remote set-url origin git@github.com:marc-hg/my-dotfiles.git"
 alias git_set_my_dot_files_user="git -C ~/my-dotfiles config --local user.email 'myuser.notexist.wo.wa' && git -C ~/my-dotfiles config --local user.name myuser"
 # Sync keys
-alias sync-ssh="rsync -a --exclude='.git' --exclude='known_hosts' livb@192.168.0.10:/home/livb/.ssh/ ~/.ssh && git_change_remote && git_set_my_dot_files_user"
+alias sync-ssh="rsync -a --exclude='.git' --exclude='known_hosts' livb@192.168.0.10:/home/livb/.ssh/ ~/.ssh && git_change_remote && git_set_my_dot_files_user && git -C ~/my-dotfiles pull origin main"
 alias sync_ssh="sync-ssh"
 
 # Meta
