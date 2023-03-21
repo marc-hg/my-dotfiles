@@ -101,6 +101,7 @@ bindsym $mod+v exec rofi -modi "clipboard:~/my-dotfiles/greenclip/bin/greenclip 
 
 bindsym $mod+n exec thunar
 for_window [class="FXTerm"] floating enable
+for_window [class="FXTerm"] resize set 1280 720
 bindsym $mod+t exec --no-startup-id kitty --class FXTerm
 
 # A more modern dmenu replacement is rofi:
@@ -292,7 +293,7 @@ assign [class="jetbrains-idea"] $ws2
 assign [class="Google-chrome"] $ws3
 assign [class="discord"] $ws4
 assign [class="Slack"] $ws4
-# changes
+
 assign [class="Spotify"] $ws9
 assign [class="notion"] $ws10
 assign [class="Todoist"] $ws11
