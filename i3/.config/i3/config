@@ -301,7 +301,7 @@ assign [class="firefox"] $ws12
 
 for_window [class="^jetbrains-idea"] move --no-auto-back-and-forth to workspace $ws2
 for_window [class="^discord"] move --no-auto-back-and-forth to workspace $ws4
-for_window [class="^Spotify"] move --no-auto-back-and-forth to workspace $ws7
+for_window [class="^Spotify"] move --no-auto-back-and-forth to workspace $ws9
 
 for_window [class="Thunar"] floating enable
 # for_window [class="^Google"] move --no-auto-back-and-forth to workspace $ws3 TODO NOT SURE IF NEEDED
