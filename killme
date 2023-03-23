@@ -1,0 +1,13 @@
+
+#!/bin/bash
+
+args=()
+for arg in "$@"; do
+  if [ "$arg" = "-f" ]; then
+    args+=("--file")
+  else
+    args+=("$arg")
+  fi
+done
+
+exec docker compose "${args[@]}"
