@@ -1,3 +1,0 @@
-[submodule "lazyvim/.config/nvim"]
-	path = lazyvim/.config/nvim
-	url = git@github.com:marc-hg/starter.git
