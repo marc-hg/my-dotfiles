@@ -127,4 +127,4 @@ fi
 
 # fnm
 export PATH="/home/${USER}/.local/share/fnm:$PATH"
-eval "`fnm env`"
+#eval "`fnm env`"
