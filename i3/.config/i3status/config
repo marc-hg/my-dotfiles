@@ -14,11 +14,11 @@ general {
 order += "wireless wlp59s0"
 order += "battery all"
 order += "volume master"
+order += "disk /"
 order += "memory"
 order += "load"
 order += "cpu_temperature 0"
 order += "tztime local"
-# order += "disk /"
 
 cpu_temperature 0 {
         format = " %degrees °C"
@@ -56,12 +56,12 @@ wireless wlp59s0 {
 }
 
 memory {
-        format = " %percentage_used"
+        format = "🐏 %percentage_used"
         threshold_degraded = "1G"
 }
 
 disk "/" {
-        format = "%avail"
+        format = "💿 %percentage_used"
 }
 
 volume master {

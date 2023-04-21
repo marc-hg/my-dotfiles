@@ -10,6 +10,6 @@ if [ "$output" = "connected" ]; then
 else
   # If the external monitor is connected, switch to laptop screen only
   xrandr --output HDMI-1 --off --output eDP-1 --auto --primary
-  pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:analog-stereo
+  pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:analog-stereo+input:analog-stereo
 fi
 feh --randomize --preload --bg-fill ~/Pictures/Wallpapers/
