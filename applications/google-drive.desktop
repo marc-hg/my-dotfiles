@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Google Drive
+Comment=Open Google Drive in a borderless Chrome window
+Exec=/opt/google/chrome/google-chrome --profile-directory="Default" --app=https://drive.google.com --kiosk
+Icon=google-chrome
+Terminal=false
+Type=Application
+Categories=Office;

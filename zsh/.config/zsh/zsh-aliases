@@ -8,6 +8,7 @@ alias nvimrc='nvim ~/.config/nvim/'
 alias ccat='pygmentize -g'
 alias python='python3'
 alias kubectl="minikube kubectl --"
+alias vi="lvim"
 
 #alias lvim='nvim -u ~/.local/share/lunarvim/lvim/init.lua --cmd "set runtimepath+=~/.local/share/lunarvim/lvim"'
 alias lvim='~/.local/bin/lvim'

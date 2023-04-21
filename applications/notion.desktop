@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Notion
+Comment=Open Notion in a borderless Chrome window
+Exec=/opt/google/chrome/google-chrome --profile-directory="Default" --app=https://www.notion.so --disable-extensions --kiosk
+Icon=google-chrome
+Terminal=false
+Type=Application
+Categories=Internet;
