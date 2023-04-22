@@ -24,6 +24,8 @@ font pango:Comic Code Ligatures, MesloLGS NF 11
 for_window [class="^.*"] border pixel 2.5 
 for_window [class="^.*"] client.focused          #77dd77 #285577 #ffffff #2e9ef4   #285577
 
+
+
 # gaps inner 0
 # gaps outer 0
 # Launch xscreensaver if it exists
@@ -34,6 +36,9 @@ exec --no-startup-id xscreensaver -no-splash
 
 # Start polybar
 # exec --no-startup-id ~/.config/polybar/launch.sh
+
+# Make input a faster (terminal feels smoother)
+exec --no-startup-id xset r rate 240 50
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
