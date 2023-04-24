@@ -19,6 +19,8 @@ zle_highlight=('paste:none')
 
 # beeping is annoying
 unsetopt BEEP
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+[[ ! -f ~/my-dotfiles/zsh/.config/zsh/.p10k.zsh ]] || source ~/my-dotfiles/zsh/.config/zsh/.p10k.zsh
 
 
 # completions
@@ -128,3 +130,6 @@ fi
 # fnm
 export PATH="/home/${USER}/.local/share/fnm:$PATH"
 #eval "`fnm env`"
+#
+#Display Pokemon
+pokemon-colorscripts --no-title -r 1,3,6
