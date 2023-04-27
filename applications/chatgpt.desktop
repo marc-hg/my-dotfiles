@@ -2,7 +2,7 @@
 Version=1.0
 Name=ChatGPT
 Comment=Open ChatGPT in a borderless Chrome window
-Exec=/opt/google/chrome/google-chrome --app=https://chat.openai.com --disable-extensions --kiosk
+Exec=/opt/google/chrome/google-chrome --profile-directory="Default" --app=https://chat.openai.com --disable-extensions --kiosk  
 Icon=google-chrome
 Terminal=false
 Type=Application
