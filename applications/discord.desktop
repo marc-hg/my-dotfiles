@@ -2,7 +2,7 @@
 Version=1.0
 Name=Discord
 Comment=Open Discord in a borderless Chrome window
-Exec=/opt/google/chrome/google-chrome --user-data-dir="~/.config/google-chrome/KioskProfile" --app=https://discord.com/app --disable-extensions --kiosk
+Exec=/opt/google/chrome/google-chrome --user-data-dir="~/.config/google-chrome/KioskProfile" --app=https://discord.com/app --kiosk
 Icon=discord
 Terminal=false
 Type=Application

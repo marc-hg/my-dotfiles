@@ -2,7 +2,7 @@
 Version=1.0
 Name=Notion
 Comment=Open Notion in a borderless Chrome window
-Exec=/opt/google/chrome/google-chrome --user-data-dir="~/.config/google-chrome/KioskProfile" --app=https://www.notion.so --disable-extensions --kiosk
+Exec=/opt/google/chrome/google-chrome --user-data-dir="~/.config/google-chrome/KioskProfile" --app=https://www.notion.so --kiosk
 Icon=Notion
 Terminal=false
 Type=Application
