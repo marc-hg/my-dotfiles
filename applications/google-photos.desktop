@@ -3,7 +3,7 @@ Version=1.0
 Name=Google Photos
 Comment=Open Google Photos in a borderless Chrome window
 Exec=/opt/google/chrome/google-chrome --user-data-dir="~/.config/google-chrome/KioskProfile" --app=https://photos.google.com --kiosk
-Icon=google-chrome
+Icon=google-photos
 Terminal=false
 Type=Application
 Categories=Graphics;

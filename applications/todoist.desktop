@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Todoist
+Comment=Open Todoist in a borderless Chrome window
+Exec=/opt/google/chrome/google-chrome --user-data-dir="~/.config/google-chrome/KioskProfile" --app=https://todoist.com/app/ --disable-extensions --kiosk
+Icon=todoist
+Terminal=false
+Type=Application
+Categories=Internet;
