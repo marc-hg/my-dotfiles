@@ -125,7 +125,7 @@ fi
 # fi
 # unset __conda_setup
 # <<< conda initialize <<<
-
+[ -f /opt/anaconda/etc/profile.d/conda.sh ] && source /opt/anaconda/etc/profile.d/conda.sh
 
 # fnm
 export PATH="/home/${USER}/.local/share/fnm:$PATH"

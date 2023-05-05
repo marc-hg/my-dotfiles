@@ -1,30 +1,30 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
-vim.keymap.set(
-  "n",
-  "<leader>sx",
-  require("telescope.builtin").resume,
-  { noremap = true, silent = true, desc = "resume" }
-)
-vim.cmd([[imap <silent><script><expr> <C-A> copilot#Accept("\<CR>")]])
-vim.api.nvim_set_keymap("n", "<leader>w", ":w<CR>", { noremap = true, silent = true })
+local opts = { noremap = true, silent = true }
 
-local is_wsl = (function()
-  local output = vim.fn.systemlist("uname -r")
-  return not not string.find(output[1] or "", "WSL")
-end)()
-if is_wsl then
-  vim.g.clipboard = {
-    name = "win32yank-wsl",
-    copy = {
-      ["+"] = "/mnt/v/wsl2/win32yank.exe -i --crlf",
-      ["*"] = "/mnt/v/wsl2/win32yank.exe -i --crlf",
-    },
-    paste = {
-      ["+"] = "/mnt/v/wsl2/win32yank.exe -o --lf",
-      ["*"] = "/mnt/v/wsl2/win32yank.exe -o --lf",
-    },
-    cache_enabled = 0,
-  }
-end
+local map = vim.keymap.set
+
+-- map("n", "<C-Space>", ":WhichKey \\<space><cr>", opts)
+map("n", "<C-d>", "<C-d>zz", opts)
+map("n", "<C-u>", "<C-u>zz", opts)
+map("v", "J", ":m '>+1<CR>gv=gv", opts)
+map("v", "K", ":m '<-2<CR>gv=gv", opts)
+map("n", "<leader><leader>", ":Telescope buffers<CR>", opts)
+
+-- Remap for dealing with visual line wraps
+map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true })
+map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true })
+
+-- better indenting
+map("v", "<", "<gv")
+map("v", ">", ">gv")
+
+-- paste over currently selected text without yanking it
+map("v", "p", '"_dp')
+map("v", "P", '"_dP')
+
+-- Fast saving
+vim.keymap.set('n', '<Leader>w', ':write!<CR>')
+vim.keymap.set('n', '<Leader>q', ':q!<CR>', { silent = true })
+
+-- Exit on jj and jk
+vim.keymap.set('i', 'jj', '<ESC>')
+vim.keymap.set('i', 'jk', '<ESC>')

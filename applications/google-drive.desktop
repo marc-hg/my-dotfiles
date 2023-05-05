@@ -2,7 +2,7 @@
 Version=1.0
 Name=Google Driv
 Comment=Open Google Drive in a borderless Chrome window
-Exec=/opt/google/chrome/google-chrome --user-data-dir="~/.config/google-chrome/KioskProfile" --app=https://drive.google.com --kiosk
+Exec=/home/ari/my-dotfiles/applications/kiosk-browser https://drive.google.com
 Icon=chrome-aghbiahbpaijignceidepookljebhfak-Default
 Terminal=false
 Type=Application
