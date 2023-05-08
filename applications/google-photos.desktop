@@ -2,7 +2,7 @@
 Version=1.0
 Name=Google Photos
 Comment=Open Google Photos in a borderless Chrome window
-Exec=/home/ari/my-dotfiles/applications/kiosk-browser https://photos.google.com
+Exec=bash -c "exec ~/my-dotfiles/applications/kiosk-browser https://photos.google.com"
 Icon=google-photos
 Terminal=false
 Type=Application

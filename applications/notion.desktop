@@ -2,7 +2,7 @@
 Version=1.0
 Name=Notion
 Comment=Open Notion in a borderless Chrome window
-Exec=/home/ari/my-dotfiles/applications/kiosk-browser https://www.notion.so
+Exec=bash -c "exec ~/my-dotfiles/applications/kiosk-browser https://www.notion.so"
 Icon=Notion
 Terminal=false
 Type=Application

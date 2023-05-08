@@ -2,7 +2,7 @@
 Version=1.0
 Name=Discord
 Comment=Open Discord in a borderless Chrome window
-Exec=/home/ari/my-dotfiles/applications/kiosk-browser https://discord.com/app
+Exec=bash -c "exec ~/my-dotfiles/applications/kiosk-browser https://discord.com/app"
 Icon=discord
 Terminal=false
 Type=Application

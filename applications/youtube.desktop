@@ -2,7 +2,7 @@
 Version=1.0
 Name=Youtube
 Comment=Open Todoist in a borderless Chrome window
-Exec=/home/ari/my-dotfiles/applications/kiosk-browser https://youtube.com
+Exec=bash -c "exec ~/my-dotfiles/applications/kiosk-browser https://youtube.com"
 Icon=YouTube
 Terminal=false
 Type=Application

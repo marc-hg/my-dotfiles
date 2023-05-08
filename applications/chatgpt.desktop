@@ -2,7 +2,7 @@
 Version=1.0
 Name=ChatGPT
 Comment=Open ChatGPT in a borderless Chrome window
-Exec=/home/ari/my-dotfiles/applications/kiosk-browser https://chat.openai.com
+Exec=bash -c "exec ~/my-dotfiles/applications/kiosk-browser https://chat.openai.com"
 Icon=~/my-dotfiles/applications/icons/chatgpt.svg
 Terminal=false
 Type=Application

@@ -2,7 +2,7 @@
 Version=1.0
 Name=Spotify Web Player
 Comment=Open Spotify Web Player in a borderless Chrome window
-Exec=/home/ari/my-dotfiles/applications/kiosk-browser https://open.spotify.com
+Exec=bash -c "exec google-chrome -user-data-dir="~/.config/google-chrome/KioskProfile" --disable-extensions-except=cjpalhdlnbpafiamejdnhcphjbkeiagm --kiosk -app="$@""
 Icon=spotify
 Terminal=false
 Type=Application
