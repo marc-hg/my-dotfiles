@@ -5,7 +5,7 @@ output=$(xrandr --query | grep "HDMI-1 connected" | cut -d ' ' -f2)
 
 if [ "$output" = "connected" ]; then
   # If the external monitor is disconnected, switch to external monitor only
-  xrandr --output eDP-1 --off --output HDMI-1 --auto --primary
+  xrandr --output eDP-1 --off --output HDMI-1 --mode 2560x1080 --rate 74.99 --auto --primary
   pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:hdmi-stereo
 else
   # If the external monitor is connected, switch to laptop screen only

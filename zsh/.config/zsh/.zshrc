@@ -19,7 +19,6 @@ zle_highlight=('paste:none')
 
 # beeping is annoying
 unsetopt BEEP
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/my-dotfiles/zsh/.config/zsh/.p10k.zsh ]] || source ~/my-dotfiles/zsh/.config/zsh/.p10k.zsh
 
 
