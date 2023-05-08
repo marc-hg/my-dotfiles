@@ -7,7 +7,6 @@ alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git
 alias nvimrc='nvim ~/.config/nvim/'
 alias ccat='pygmentize -g'
 alias python='python3'
-alias kubectl="minikube kubectl --"
 alias vi="lvim"
 alias hx="helix"
 

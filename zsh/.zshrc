@@ -1,4 +1,4 @@
 export ZDOTDIR=$HOME/.config/zsh
-neofetch
+#neofetch
 zsh
 
