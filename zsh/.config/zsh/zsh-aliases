@@ -32,6 +32,9 @@ alias git_set_my_dot_files_user="git -C ~/my-dotfiles config --local user.email 
 # Sync keys
 alias sync-ssh="rsync -a --exclude='.git' --exclude='known_hosts' livb@192.168.0.10:/home/livb/.ssh/ ~/.ssh && git_change_remote && git_set_my_dot_files_user && git -C ~/my-dotfiles pull origin main"
 alias sync_ssh="sync-ssh"
+# Sync apps
+alias sync-apps="rsync -a ~/my-dotfiles/applications/ ~/.local/share/applications/"
+alias sync_apps="sync-apps"
 
 # Meta
 alias zsh-update="git -C ~/my-dotfiles pull && git -C ~/my-dotfiles submodule foreach --recursive git pull && zsh"
