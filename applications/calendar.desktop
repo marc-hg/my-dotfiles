@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Calendar
+Comment=Open Calendar in a borderless Chrome window
+Exec=bash -c "exec ~/my-dotfiles/applications/kiosk-browser https://calendar.google.com"
+Icon=google-calendar
+Terminal=false
+Type=Application
+Categories=Network;

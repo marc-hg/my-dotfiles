@@ -305,13 +305,16 @@ assign [class="jetbrains-idea"] $ws2
 assign [class="discord"] $ws4
 assign [class="Slack"] $ws4
 
-# assign [class="Google-chrome" instance="google-chrome"] $ws3
+assign [class="Google-chrome" instance="google-chrome"] $ws3
+assign [class="Google-chrome" instance="app.slack.com__client"] $ws4
+assign [class="Google-chrome" instance="calendar.google.com"] $ws4
+assign [class="Google-chrome" instance="mail.google.com"] $ws4
 assign [class="Google-chrome" instance="open.spotify.com"] $ws9
 assign [class="Google-chrome" instance="www.notion.so"] $ws10
 assign [class="Google-chrome" instance="todoist.com__app"] $ws11
+assign [class="Google-chrome" instance="lambdaloopers.monday.com"] $ws11
+assign [class="Google-chrome" instance="mainloop.lambdaloopers.com__resources_employee-client-day-resources"] $ws11
 assign [class="Google-chrome" instance="chat.openai.com"] $ws12
-assign [class="Google-chrome" instance="app.slack.com__client"] $ws4
-
 
 for_window [class="^jetbrains-idea"] move --no-auto-back-and-forth to workspace $ws2
 
@@ -324,17 +327,14 @@ exec --no-startup-id feh -feh --randomize --bg-fill ~/Pictures/Wallpapers/
 
 exec --no-startup-id idea
 # exec --no-startup-id firefox
-exec --no-startup-id gtk-launch chatgpt
-exec --no-startup-id gtk-launch notion
-exec --no-startup-id gtk-launch todoist
-exec --no-startup-id gtk-launch spotifyW
-exec --no-startup-id gtk-launch slack
 # exec --no-startup-id Discord
-exec --no-startup-id google-chrome-stable
-# exec --no-startup-id notion-snap
-# exec --no-startup-id todoist
-# exec --no-startup-id slack
-# exec --no-startup-id flatpak run com.spotify.Client
-# exec --no-startup-id flatpak run com.todoist.Todoist
-# exec --no-startup-id ~/Applications/todoist_a9b6b15f00167a43359ac7ed6d5af3be
+exec google-chrome
+exec google-chrome -user-data-dir="~/.config/google-chrome/KioskProfile" -app="https://chat.openai.com/"
+exec google-chrome -user-data-dir="~/.config/google-chrome/KioskProfile" -app="https://open.spotify.com/"
+exec google-chrome -user-data-dir="~/.config/google-chrome/KioskProfile" -app="https://www.notion.so"
+exec google-chrome -user-data-dir="~/.config/google-chrome/KioskProfile" -app="https://todoist.com/app/"
+exec google-chrome -user-data-dir="~/.config/google-chrome/KioskProfile" -app="https://lambdaloopers.monday.com/"
+exec google-chrome -user-data-dir="~/.config/google-chrome/KioskProfile" -app="https://mainloop.lambdaloopers.com/resources/employee-client-day-resources?employee-client-day-resources_filter=W3siQXBwXFxOb3ZhXFxGaWx0ZXJzXFxQYXN0QW5kRnV0dXJlRGF5c0ZpbHRlciI6IlBhc3QgYW5kIFByZXNlbnQifSx7IkFwcFxcTm92YVxcRmlsdGVyc1xcRW1wbG95ZWVGaWx0ZXIiOiIxNiJ9LHsiQXBwXFxOb3ZhXFxGaWx0ZXJzXFxDbGllbnRGaWx0ZXIiOiIifSx7IkFwcFxcTm92YVxcRmlsdGVyc1xcVGVhbUZpbHRlciI6IiJ9LHsiQXBwXFxOb3ZhXFxGaWx0ZXJzXFxZZWFyRmlsdGVyIjoiMjAyMyJ9XQ%3D%3D&employee-client-day-resources_page=1"
 
+
+exec_always --no-startup-id ~/my-dotfiles/i3/.config/i3/open-work-media.sh

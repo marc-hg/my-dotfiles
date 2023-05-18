@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Mainloop
+Comment=Open Mainloop in a borderless Chrome window
+Exec=bash -c "exec ~/my-dotfiles/applications/kiosk-browser https://mainloop.lambdaloopers.com/resources/employee-client-day-resources?employee-client-day-resources_filter=W3siQXBwXFxOb3ZhXFxGaWx0ZXJzXFxQYXN0QW5kRnV0dXJlRGF5c0ZpbHRlciI6IlBhc3QgYW5kIFByZXNlbnQifSx7IkFwcFxcTm92YVxcRmlsdGVyc1xcRW1wbG95ZWVGaWx0ZXIiOiIxNiJ9LHsiQXBwXFxOb3ZhXFxGaWx0ZXJzXFxDbGllbnRGaWx0ZXIiOiIifSx7IkFwcFxcTm92YVxcRmlsdGVyc1xcVGVhbUZpbHRlciI6IiJ9LHsiQXBwXFxOb3ZhXFxGaWx0ZXJzXFxZZWFyRmlsdGVyIjoiMjAyMyJ9XQ%3D%3D&employee-client-day-resources_page=1"
+Icon=mainloop
+Terminal=false
+Type=Application
+Categories=Network;
