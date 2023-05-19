@@ -309,11 +309,11 @@ assign [class="Google-chrome" instance="google-chrome"] $ws3
 assign [class="Google-chrome" instance="app.slack.com__client"] $ws4
 assign [class="Google-chrome" instance="calendar.google.com"] $ws4
 assign [class="Google-chrome" instance="mail.google.com"] $ws4
+assign [class="Google-chrome" instance="lambdaloopers.monday.com"] $ws8
+assign [class="Google-chrome" instance="mainloop.lambdaloopers.com__resources_employee-client-day-resources"] $ws8
 assign [class="Google-chrome" instance="open.spotify.com"] $ws9
 assign [class="Google-chrome" instance="www.notion.so"] $ws10
 assign [class="Google-chrome" instance="todoist.com__app"] $ws11
-assign [class="Google-chrome" instance="lambdaloopers.monday.com"] $ws11
-assign [class="Google-chrome" instance="mainloop.lambdaloopers.com__resources_employee-client-day-resources"] $ws11
 assign [class="Google-chrome" instance="chat.openai.com"] $ws12
 
 for_window [class="^jetbrains-idea"] move --no-auto-back-and-forth to workspace $ws2
