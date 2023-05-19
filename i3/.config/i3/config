@@ -323,7 +323,7 @@ for_window [class="Thunar"] floating enable
 # Startup daemons
 exec --no-startup-id flameshot
 exec --no-startup-id ~/my-dotfiles/greenclip/bin/greenclip daemon 
-exec --no-startup-id feh -feh --randomize --bg-fill ~/Pictures/Wallpapers/
+exec --no-startup-id feh -feh --randomize --bg-fill ~/my-dotfiles/backgrounds/default.jpg
 
 exec --no-startup-id idea
 # exec --no-startup-id firefox
