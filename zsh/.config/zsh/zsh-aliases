@@ -87,6 +87,13 @@ alias pa='pacman -Ss' # list availabe package
 alias pc='sudo pacman -Sc' # remove unused cache
 alias po='pacman -Qtdq | sudo pacman -Rns -' # remove unused packages, also try > pacman -Qqd | pacman -Rsu --print -
 
+alias showaliases="echo 'Alias: in -> sudo pacman -S # install package'
+echo 'Alias: un -> sudo pacman -Rns # uninstall package'
+echo 'Alias: up -> sudo pacman -Syu # update system/package/aur'
+echo 'Alias: pl -> pacman -Qs # list installed package'
+echo 'Alias: pa -> pacman -Ss # list available package'
+echo 'Alias: pc -> sudo pacman -Sc # remove unused cache'
+echo 'Alias: po -> pacman -Qtdq | sudo pacman -Rns - # remove unused packages, also try > pacman -Qqd | pacman -Rsu --print -'"
 
 if [[ $TERM == "xterm-kitty" ]]; then
   alias ssh="kitty +kitten ssh"
