@@ -24,7 +24,8 @@ font pango:Comic Code Ligatures, MesloLGS NF 11
 for_window [class="^.*"] border pixel 2.5 
 for_window [class="^.*"] client.focused          #77dd77 #285577 #ffffff #2e9ef4   #285577
 
-
+# Keyboard layout
+exec setxkbmap -layout us -variant intl
 
 # gaps inner 0
 # gaps outer 0
