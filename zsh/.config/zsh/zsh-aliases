@@ -9,7 +9,7 @@ alias ccat='pygmentize -g'
 alias python='python3'
 alias vi="lvim"
 alias hx="helix"
-alias idea="intellij-idea-ultimate"
+alias idea="intellij-idea-ultimate-edition"
 
 #alias lvim='nvim -u ~/.local/share/lunarvim/lvim/init.lua --cmd "set runtimepath+=~/.local/share/lunarvim/lvim"'
 alias lvim='~/.local/bin/lvim'
