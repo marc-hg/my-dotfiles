@@ -11,10 +11,10 @@ general {
         interval = 5
 }
 
-order += "wireless wlp59s0"
+order += "wireless wlan0"
 order += "battery all"
 order += "volume master"
-order += "disk /"
+# order += "disk /"
 order += "memory"
 order += "load"
 order += "cpu_temperature 0"
@@ -32,7 +32,7 @@ battery all {
         last_full_capacity = false
         format_down = "No battery"
         status_chr = "⚡"
-        status_bat = "🔋"
+        status_bat = ""
         status_unk = "?"
         status_full = "☻ FULL"
         path = "/sys/class/power_supply/CMB0%d/uevent"
@@ -47,7 +47,7 @@ load {
         format = " %1min"
 }
 
-wireless wlp59s0 {
+wireless wlan0 {
     # format_up = " (%quality at %essid) %ip"
     # format_up = " (%quality at %essid) %ip                                                                                                      "
     format_up = " %quality %ip"
@@ -56,7 +56,7 @@ wireless wlp59s0 {
 }
 
 memory {
-        format = "🐏 %percentage_used"
+        format = "󰍛 %percentage_used"
         threshold_degraded = "1G"
 }
 
