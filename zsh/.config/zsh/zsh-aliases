@@ -9,6 +9,7 @@ alias ccat='pygmentize -g'
 alias python='python3'
 alias vi="lvim"
 alias hx="helix"
+alias nf="neofetch"
 alias idea="~/.local/share/JetBrains/Toolbox/apps/IDEA-U/ch-0/231.8109.175/bin/idea.sh"
 
 #alias lvim='nvim -u ~/.local/share/lunarvim/lvim/init.lua --cmd "set runtimepath+=~/.local/share/lunarvim/lvim"'
@@ -35,6 +36,8 @@ alias sync_ssh="sync-ssh"
 # Sync apps
 alias sync-apps="rsync -a ~/my-dotfiles/applications/ ~/.local/share/applications/"
 alias sync_apps="sync-apps"
+alias sync-dots="rsync -av ~/Dots/Configs/.config ~/.config"
+alias sync-hypr="rsync -av --progress ~/Dots/Configs/.config/ ~/.config/"
 
 # Meta
 alias zsh-update="git -C ~/my-dotfiles pull && git -C ~/my-dotfiles submodule foreach --recursive git pull && zsh"
@@ -84,10 +87,13 @@ alias un='sudo pacman -Rns' # uninstall package
 alias up='sudo pacman -Syu' # update system/package/aur
 alias pl='pacman -Qs' # list installed package
 alias pa='pacman -Ss' # list availabe package
-alias pc='sudo pacman -Sc' # remove unused cache
+alias pc='sudo pacman -Sc && yay -Sc' # remove unused cache
 alias po='pacman -Qtdq | sudo pacman -Rns -' # remove unused packages, also try > pacman -Qqd | pacman -Rsu --print -
 
-alias showaliases="echo 'Alias: in -> sudo pacman -S # install package'
+alias show-aliases='ccat ~/my-dotfiles/zsh/.config/zsh/zsh-aliases'
+alias show_aliases='show-aliases'
+
+alias show-pac-aliases="echo 'Alias: in -> sudo pacman -S # install package'
 echo 'Alias: un -> sudo pacman -Rns # uninstall package'
 echo 'Alias: up -> sudo pacman -Syu # update system/package/aur'
 echo 'Alias: pl -> pacman -Qs # list installed package'
