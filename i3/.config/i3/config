@@ -254,8 +254,8 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec ~/my-dotfiles/i3/.config/i3/scripts/powermenu
 bindsym $mod+Shift+p exec ~/my-dotfiles/i3/.config/i3/scripts/power-profiles
 # wallpaper
-bindsym $mod+Shift+w exec --no-startup-id feh --randomize --bg-fill --preload ~/Pictures/Wallpapers/
 
+bindsym $mod+Shift+w exec --no-startup-id feh -feh --randomize --bg-fill ~/my-dotfiles/backgrounds/default.jpg
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -334,12 +334,11 @@ exec --no-startup-id .local/share/JetBrains/Toolbox/apps/IDEA-U/ch-0/231.9011.34
 # exec --no-startup-id firefox
 # exec --no-startup-id Discord
 exec google-chrome
-exec google-chrome -user-data-dir="~/.config/google-chrome/KioskProfile" -app="https://chat.openai.com/"
-exec google-chrome -user-data-dir="~/.config/google-chrome/KioskProfile" -app="https://open.spotify.com/"
-exec google-chrome -user-data-dir="~/.config/google-chrome/KioskProfile" -app="https://www.notion.so"
-exec google-chrome -user-data-dir="~/.config/google-chrome/KioskProfile" -app="https://todoist.com/app/"
-exec google-chrome -user-data-dir="~/.config/google-chrome/KioskProfile" -app="https://lambdaloopers.monday.com/"
-exec google-chrome -user-data-dir="~/.config/google-chrome/KioskProfile" -app="https://mainloop.lambdaloopers.com/resources/employee-client-day-resources?employee-client-day-resources_filter=W3siQXBwXFxOb3ZhXFxGaWx0ZXJzXFxQYXN0QW5kRnV0dXJlRGF5c0ZpbHRlciI6IlBhc3QgYW5kIFByZXNlbnQifSx7IkFwcFxcTm92YVxcRmlsdGVyc1xcRW1wbG95ZWVGaWx0ZXIiOiIxNiJ9LHsiQXBwXFxOb3ZhXFxGaWx0ZXJzXFxDbGllbnRGaWx0ZXIiOiIifSx7IkFwcFxcTm92YVxcRmlsdGVyc1xcVGVhbUZpbHRlciI6IiJ9LHsiQXBwXFxOb3ZhXFxGaWx0ZXJzXFxZZWFyRmlsdGVyIjoiMjAyMyJ9XQ%3D%3D&employee-client-day-resources_page=1"
-
+exec google-chrome-beta -app="https://chat.openai.com/"
+exec google-chrome-beta -app="https://open.spotify.com/"
+exec google-chrome-beta -app="https://www.notion.so"
+exec google-chrome-beta -app="https://todoist.com/app/"
+exec google-chrome-beta -app="https://lambdaloopers.monday.com/"
+exec google-chrome-beta -app="https://mainloop.lambdaloopers.com/resources/employee-client-day-resources?employee-client-day-resources_filter=W3siQXBwXFxOb3ZhXFxGaWx0ZXJzXFxQYXN0QW5kRnV0dXJlRGF5c0ZpbHRlciI6IlBhc3QgYW5kIFByZXNlbnQifSx7IkFwcFxcTm92YVxcRmlsdGVyc1xcRW1wbG95ZWVGaWx0ZXIiOiIxNiJ9LHsiQXBwXFxOb3ZhXFxGaWx0ZXJzXFxDbGllbnRGaWx0ZXIiOiIifSx7IkFwcFxcTm92YVxcRmlsdGVyc1xcVGVhbUZpbHRlciI6IiJ9LHsiQXBwXFxOb3ZhXFxGaWx0ZXJzXFxZZWFyRmlsdGVyIjoiMjAyMyJ9XQ%3D%3D&employee-client-day-resources_page=1"
 
 exec --no-startup-id ~/my-dotfiles/i3/.config/i3/open-work-media.sh

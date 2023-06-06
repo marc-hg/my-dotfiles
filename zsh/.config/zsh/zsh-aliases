@@ -84,7 +84,7 @@ alias ld='exa -lD --icons'
 
 alias in='sudo pacman -S' # install package
 alias un='sudo pacman -Rns' # uninstall package
-alias up='sudo pacman -Syu' # update system/package/aur
+alias up='sudo pacman -Syu && eos-update' # update system/package/aur
 alias pl='pacman -Qs' # list installed package
 alias pa='pacman -Ss' # list availabe package
 alias pc='sudo pacman -Sc && yay -Sc' # remove unused cache
