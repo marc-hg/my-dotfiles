@@ -162,7 +162,7 @@ if ! command -v lvim >/dev/null 2>&1; then
     # Do you want to install lvim?
     if want_act "Do you want to install lvim?"; then
         echo "Installing lvim..."
-        LV_BRANCH=rolling bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installer/install.sh)
+        LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
         echo "Done"
     fi
 fi
@@ -172,11 +172,17 @@ if ! command -v lazygit >/dev/null 2>&1; then
     echo "lazygit is not installed..."
     # Do you want to install lazygit?
     if want_act "Do you want to install lazygit?"; then
-        echo "Installing lazygit..."
-        LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[0-35.]+')
-        curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
-        sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
-        rm -rf ./lazygit.tar.gz
-        echo "Done"
+      LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+      curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+      tar xf lazygit.tar.gz lazygit
+      sudo install lazygit /usr/local/bin
     fi
+fi
+
+# Install lazydocker if not installed
+if ! command -v lazydocker >dev/null 2>&1; then
+  echo "lazydocker is not installed"
+  if want_act "Do you want to install lazydocker?"; then
+    curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+  fi
 fi
