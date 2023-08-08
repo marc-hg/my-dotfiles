@@ -1,9 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Name=ChatGPT
-Comment=Open ChatGPT in a borderless Chrome window
-Exec=bash -c "exec ~/my-dotfiles/applications/kiosk-browser https://chat.openai.com"
-Icon=~/my-dotfiles/applications/icons/chatgpt.svg
-Terminal=false
-Type=Application
-Categories=Internet;

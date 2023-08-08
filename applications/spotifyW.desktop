@@ -1,9 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Name=Spotify Web Player
-Comment=Open Spotify Web Player in a borderless Chrome window
-Exec=bash -c "exec google-chrome -user-data-dir="~/.config/google-chrome/KioskProfile" -app="https://open.spotify.com/""
-Icon=spotify
-Terminal=false
-Type=Application
-Categories=Audio;Music;Player;Internet;

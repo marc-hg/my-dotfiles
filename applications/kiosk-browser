@@ -1,7 +1,0 @@
-#!/bin/sh
-
-
-exec google-chrome -user-data-dir="~/.config/google-chrome/KioskProfile" --disable-extensions --kiosk -app="$@"
-#exec google-chrome-unstable -user-data-dir="~/.config/google-chrome-unstable/KioskProfile" --kiosk -app="$@"
-#firefox --new-instance --p KioskProfile --kiosk "$@" 
-#firefox doesnt really work unless it uses a different profile for each app, sadge

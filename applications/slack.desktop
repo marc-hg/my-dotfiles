@@ -1,9 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Name=SlackW
-Comment=Open Slack in a borderless Chrome window with Profile 3
-Exec=bash -c "exec ~/my-dotfiles/applications/kiosk-browser https://app.slack.com/client"
-Icon=slack
-Terminal=false
-Type=Application
-Categories=Network;

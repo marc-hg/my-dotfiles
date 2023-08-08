@@ -1,9 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Name=Google Driv
-Comment=Open Google Drive in a borderless Chrome window
-Exec=bash -c "exec ~/my-dotfiles/applications/kiosk-browser https://drive.google.com"
-Icon=chrome-aghbiahbpaijignceidepookljebhfak-Default
-Terminal=false
-Type=Application
-Categories=Office;
