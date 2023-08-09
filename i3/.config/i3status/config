@@ -47,7 +47,7 @@ load {
         format = " %1min"
 }
 
-wireless wlan0 {
+wireless wlp59s0 {
     # format_up = " (%quality at %essid) %ip"
     # format_up = " (%quality at %essid) %ip                                                                                                      "
     format_up = " %quality %ip"
