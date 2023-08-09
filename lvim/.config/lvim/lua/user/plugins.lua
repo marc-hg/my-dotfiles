@@ -48,7 +48,7 @@ lvim.plugins = {
 
   { "christoomey/vim-tmux-navigator" },
   { "tpope/vim-surround" },
-  { "felipec/vim-sanegx", event = "BufRead" },
+  { "felipec/vim-sanegx",            event = "BufRead" },
   {
     "windwp/nvim-ts-autotag",
     config = function()
@@ -83,15 +83,15 @@ lvim.plugins = {
   },
 }
 
-table.insert(lvim.plugins, {
-  "zbirenbaum/copilot-cmp",
-  event = "InsertEnter",
-  dependencies = { "zbirenbaum/copilot.lua" },
-  config = function()
-    local ok, cmp = pcall(require, "copilot_cmp")
-    if ok then cmp.setup({}) end
-  end,
-})
+-- table.insert(lvim.plugins, {
+--   "zbirenbaum/copilot-cmp",
+--   event = "InsertEnter",
+--   dependencies = { "zbirenbaum/copilot.lua" },
+--   config = function()
+--     local ok, cmp = pcall(require, "copilot_cmp")
+--     if ok then cmp.setup({}) end
+--   end,
+-- })
 
 lvim.builtin.telescope.on_config_done = function(telescope)
   pcall(telescope.load_extension, "frecency")
