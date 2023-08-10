@@ -18,7 +18,7 @@ local themes = {
 }
 
 lvim.transparent_window = true
-lvim.colorscheme = themes.lunar
+lvim.colorscheme = themes.gruvbox
 
 local extra_opts = {
   sonokai = {
