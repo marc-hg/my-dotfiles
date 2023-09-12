@@ -17,6 +17,7 @@ export PATH="/data/data/com.termux/files/home/.local/share/fnm:$PATH"
 export PATH="$HOME/my-dotfiles/greenclip/bin:$PATH"
 export PATH=/opt/homebrew/bin:$PATH
 export PATH="/Applications/IntelliJ IDEA.app/Contents/MacOS:$PATH"
+export PATH="$HOME/.bun/bin:$PATH"
 # . ~/.local/share/z/bin/z.sh
 #export PATH="$PATH:./node_modules/.bin"
 # 

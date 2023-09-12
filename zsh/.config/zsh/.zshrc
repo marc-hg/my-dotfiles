@@ -133,3 +133,14 @@ export PATH="/home/${USER}/.local/share/fnm:$PATH"
 #Display Pokemon
 # pokemon-colorscripts --no-title -r 1,3,6
 # ls && (neofetch)
+
+# fnm
+export PATH="/home/myuser/.local/share/fnm:$PATH"
+eval "`fnm env`"
+
+# fnm
+export PATH="/home/myuser/.local/share/fnm:$PATH"
+eval "`fnm env`"
+
+# bun completions
+[ -s "/home/myuser/.bun/_bun" ] && source "/home/myuser/.bun/_bun"

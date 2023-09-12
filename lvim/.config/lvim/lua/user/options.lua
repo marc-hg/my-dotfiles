@@ -54,3 +54,38 @@ vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,
 lvim.builtin.telescope.defaults.path_display = {
   shorten = 4,
 }
+
+-- if statement
+local is_wsl = (function()
+  local output = vim.fn.systemlist "uname -r"
+  return not not string.find(output[1] or "", "WSL")
+end)()
+
+if is_wsl then
+  vim.g.clipboard = {
+    name = 'WSL_Clipboard',
+    copy = {
+      ['+'] = 'clip.exe',
+      ['*'] = 'clip.exe',
+    },
+    paste = {
+      ['+'] = 'powershell.exe Get-Clipboard',
+      ['*'] = 'powershell.exe Get-Clipboard',
+    },
+    cache_enabled = 0,
+  }
+end
+
+lvim.builtin.which_key.mappings.t = { function()
+  local buf = vim.api.nvim_get_current_buf()
+  local file = vim.api.nvim_buf_get_name(buf)
+  local folder = string.gsub(file, "/[^/]+$", "")
+  folder = folder ~= "" and folder or vim.fn.getcwd()
+  vim.cmd("TermExec cmd=\"cd " .. folder .. "\"")
+end, "open terminal next to the file" }
+
+lvim.keys.term_mode = {}
+vim.keymap.del("t", "<C-l>")
+-- greatest remap ever
+vim.keymap.set("x", "<leader>p", '"_dP', { noremap = true })
+vim.opt.relativenumber = true
